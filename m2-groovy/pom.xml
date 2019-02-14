@@ -17,6 +17,7 @@
             <artifactId>m1-kotlin</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
+            <classifier>api</classifier>
         </dependency>
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
@@ -35,6 +36,24 @@
 
     <build>
         <plugins>
+                <plugin>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-maven-plugin</artifactId>
+                    <version>${kotlin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>compile</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <jvmTarget>1.8</jvmTarget>
+                    </configuration>
+                </plugin>
+
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
